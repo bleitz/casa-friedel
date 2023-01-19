@@ -1,0 +1,371 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", "sans-serif";
+  color: rgba(0, 0, 0);
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+body {
+  overflow-x: hidden;
+  margin-bottom: 800px;
+}
+.container {
+  max-width: 900px;
+  margin: 0 16px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  column-gap: 16px;
+  justify-items: stretch;
+}
+
+/*Navbar styling*/
+nav {
+  height: auto;
+  width: 100vw;
+  background-color: #ffffff;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.nav-container {
+  display: flex;
+  width: 100%;
+  max-width: 900px;
+}
+.logo img {
+  max-height: 48px;
+  margin: 16px 16px;
+}
+.logo {
+    margin: 0 auto;
+    z-index: 13;
+}
+.hamburger {
+  display: block;
+  position: absolute;
+  cursor: pointer;
+  right: 5%;
+  top: 50%;
+  transform: translate(-5%, -50%);
+  z-index: 13;
+  transition: all 0.7s ease;
+}
+.nav-links {
+    font-size: 22px;
+    display: flex;
+    position: fixed;
+    padding-top: 32px;
+    width: 100vw;
+    flex-direction: column;
+    pointer-events: none;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+    opacity: 0;
+    z-index: 12;
+  }
+.nav-links.open {
+    pointer-events: all;
+    height: 80vh;
+    opacity: 1;
+    background-color: #ffffff;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+}
+.nav-links li a {
+    text-decoration: none;
+  }
+.nav-links li a:hover {
+    color: #61dafb;
+}
+
+.nav-links li {
+position: relative;
+}
+
+.hamburger div {
+width: 30px;
+height: 3px;
+background: #000000;
+margin: 5px;
+transition: all 0.2s ease;
+}
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line2 {
+  transition: all 0.7s ease;
+  width: 0;
+}
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+#hero {
+  margin: 80px 0 120px 0;
+  grid-column: span 6;
+  width: 100%;
+}
+
+#hero img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/*Styling section titles*/
+.section-graphic {
+  grid-column: span 6;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+/*General section graphic elements*/
+.drawing {
+  position: absolute;
+}
+.brush {
+  position: absolute;
+}
+h2 {
+  font-family: "Quattrocento", "serif";
+  text-align: center;
+  z-index: 1;
+  font-size: 22px;
+  font-weight: normal;
+  letter-spacing: 3px;
+  width: 60%;
+}
+
+/*Tweaking individual position and size*/
+/*Casa Friedel*/
+#casaFriedel {
+  height: 85px;
+  margin: 0 0 34px 0;
+}
+#casaFriedel .drawing {
+  position: absolute;
+  width: 100px;
+}
+#casaFriedel .brush {
+  width: 135px;
+  position: absolute;
+  transform: translate(0, 15px);
+}
+#casaFriedel h2 {
+  transform: translate(0, 45px);
+}
+/*Preise*/
+#preise {
+  height: 90px;
+  margin: 0 0 34px 0;
+}
+#preise .drawing {
+  position: absolute;
+  width: 75px; 
+  transform: translate(-70px, 0)
+}
+#preise .brush {
+  width: 145px;
+  position: absolute;
+  transform: translate(-50px, 15px);
+}
+#preise h2 {
+  transform: translate(0, 45px);
+}
+/*Veno*/
+#veno {
+  height: 110px;
+  margin: 0 0 34px 0;
+}
+#veno .drawing {
+  position: absolute;
+  width: 100px;
+  transform: translate(0, 0)
+}
+#veno .brush {
+  width: 100px;
+  position: absolute;
+  transform: translate(10px, 20px);
+  rotate: 12deg;
+}
+#veno h2 {
+  transform: translate(0, 90px);
+}
+/*contact*/
+#contact {
+  height: 70px;
+}
+#contact .drawing {
+  position: absolute;
+  width: 80px;
+  transform: translate(-35px, 0px);
+}
+#contact .brush {
+  width: 80px;
+  position: absolute;
+  transform: translate(-50px, 35px);
+}
+#contact h2 {
+  transform: translate(0, 60px);
+}
+
+
+/*Desktop design changes*/
+@media screen and (min-width: 1024px) {
+  * {
+    font-size: 14px;
+  }
+
+  /*Styling Navbar*/
+  nav {
+    position: sticky;
+    margin: 0 auto;
+    top: 0;
+    height: 96px;
+    width: 1000px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    background-color: #ffffff;
+    box-shadow: 0 0px 0px;
+  }
+  .nav-base-shadow {
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 1s ease;
+  }
+  .nav-shadow {
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 500ms ease;
+  }
+  .nav-container {
+    margin: 0 auto;
+  }
+  .nav-links {
+    position: relative;
+    height: 100%;
+    padding-top: 0;
+    flex-direction:row;
+    pointer-events: all;
+    opacity: 1;
+  }
+  .logo img {
+    max-height: 58px;
+    margin: 16px 16px;
+  }
+  .hamburger {
+    display: none;
+  }
+  .container {
+    margin: 0 auto;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 32px;
+  }
+
+  #hero {
+    /*argin: 80px 0 120px 0;*/
+    grid-column: span 12;
+    /*width: 100%;*/
+  }
+
+  
+  /*Styling section titles*/
+.section-graphic {
+  grid-column: span 12;
+  display: flex;
+  justify-content: left;
+}
+
+/*General section graphic elements*/
+.drawing {
+  position: absolute;
+}
+.brush {
+  position: absolute;
+}
+h2 {
+  font-family: "Quattrocento", "serif";
+  text-align: center;
+  z-index: 1;
+  font-size: 34px;
+  font-weight: normal;
+  letter-spacing: 3px;
+}
+
+/*Tweaking individual position and size*/
+/*Casa Friedel*/
+#casaFriedel {
+  height: 85px;
+  margin: 0 0 34px 0;
+}
+#casaFriedel .drawing {
+  position: absolute;
+  width: 100px;
+}
+#casaFriedel .brush {
+  width: 135px;
+  position: absolute;
+  transform: translate(0, 15px);
+}
+#casaFriedel h2 {
+  transform: translate(0, 45px);
+}
+/*Preise*/
+#preise {
+  height: 90px;
+  margin: 0 0 34px 0;
+}
+#preise .drawing {
+  position: absolute;
+  width: 75px; 
+  transform: translate(-70px, 0)
+}
+#preise .brush {
+  width: 145px;
+  position: absolute;
+  transform: translate(-50px, 15px);
+}
+#preise h2 {
+  transform: translate(0, 45px);
+}
+/*Veno*/
+#veno {
+  height: 70px;
+}
+#veno .drawing {
+  position: absolute;
+  width: 100px;
+  transform: translate(0, 0)
+}
+#veno .brush {
+  width: 100px;
+  position: absolute;
+  transform: translate(10px, 20px);
+  rotate: 12deg;
+}
+#veno h2 {
+  transform: translate(0, 90px);
+}
+/*contact*/
+#contact {
+  height: 70px;
+}
+#contact .drawing {
+  position: absolute;
+  width: 80px;
+  transform: translate(-35px, 0px);
+}
+#contact .brush {
+  width: 80px;
+  position: absolute;
+  transform: translate(-50px, 35px);
+}
+#contact h2 {
+  transform: translate(0, 60px);
+}
+
+
+
+
+}
