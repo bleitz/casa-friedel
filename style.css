@@ -213,6 +213,14 @@ h2 {
   transform: translate(0, 60px);
 }
 
+.img-text-section {
+  grid-column: span 6;
+}
+
+.img-text-section img {
+  width: 100%;
+}
+
 
 /*Desktop design changes*/
 @media screen and (min-width: 1024px) {
@@ -368,8 +376,5 @@ h2 {
   #contact h2 {
     transform: translate(0, 60px);
   }
-
-
-
 
 }
