@@ -144,7 +144,7 @@ h2 {
 /*Casa Friedel*/
 #casaFriedel {
   height: 85px;
-  margin: 0 0 34px 0;
+  margin: 0 0 40px 0;
 }
 #casaFriedel .drawing {
   position: absolute;
@@ -161,7 +161,7 @@ h2 {
 /*Preise*/
 #preise {
   height: 90px;
-  margin: 0 0 34px 0;
+  margin: 0 0 40px 0;
 }
 #preise .drawing {
   position: absolute;
@@ -179,7 +179,7 @@ h2 {
 /*Veno*/
 #veno {
   height: 110px;
-  margin: 0 0 34px 0;
+  margin: 0 0 40px 0;
 }
 #veno .drawing {
   position: absolute;
@@ -198,6 +198,7 @@ h2 {
 /*contact*/
 #contact {
   height: 70px;
+  margin: 0 0 40px 0;
 }
 #contact .drawing {
   position: absolute;
@@ -307,7 +308,6 @@ h2 {
   /*Casa Friedel*/
   #casaFriedel {
     height: 160px;
-    margin: 0 0 34px 0;
   }
   #casaFriedel .drawing {
     position: absolute;
@@ -325,7 +325,6 @@ h2 {
   /*Preise*/
   #preise {
     height: 90px;
-    margin: 0 0 34px 0;
   }
   #preise .drawing {
     position: absolute;
@@ -342,22 +341,21 @@ h2 {
   }
   /*Veno*/
   #veno {
-    height: 70px;
-    margin: 0 0 34px 0;
+    height: 175px;
   }
   #veno .drawing {
     position: absolute;
-    width: 100px;
-    transform: translate(0, 0)
+    width: 140px;
+    transform: translate(-70px, 0)
   }
   #veno .brush {
-    width: 100px;
+    width: 140px;
     position: absolute;
-    transform: translate(10px, 20px);
-    rotate: 12deg;
+    transform: translate(-30px, 50px);
+    rotate: 0deg;
   }
   #veno h2 {
-    transform: translate(0, 90px);
+    transform: translate(0, 110px);
   }
   /*contact*/
   #contact {
@@ -365,16 +363,16 @@ h2 {
   }
   #contact .drawing {
     position: absolute;
-    width: 80px;
-    transform: translate(-35px, 0px);
+    width: 140px;
+    transform: translate(-70px, 0px);
   }
   #contact .brush {
-    width: 80px;
+    width: 150px;
     position: absolute;
-    transform: translate(-50px, 35px);
+    transform: translate(-30px, 50px);
   }
   #contact h2 {
-    transform: translate(0, 60px);
+    transform: translate(0, 110px);
   }
 
 }
