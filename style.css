@@ -135,9 +135,14 @@ h2 {
   text-align: center;
   z-index: 1;
   font-size: 22px;
-  font-weight: normal;
   letter-spacing: 3px;
   width: 60%;
+}
+h3 {
+  font-family: "Quattrocento", "serif";
+  font-size: 18px;
+  letter-spacing: 2px;
+  grid-column: span 6;
 }
 
 /*Tweaking individual position and size*/
@@ -301,7 +306,10 @@ h2 {
     font-size: 34px;
     font-weight: normal;
     letter-spacing: 3px;
-
+  }
+  h3 {
+    font-size: 18px;
+    grid-column: span 12;
   }
 
   /*Tweaking individual position and size*/
