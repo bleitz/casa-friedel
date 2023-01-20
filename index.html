@@ -24,10 +24,10 @@
         </div>
 
         <ul class="nav-links">
-            <li><a href="#">Casa Friedel</a></li>
-            <li><a href="#">Preise</a></li>
-            <li><a href="#">Veno</a></li>
-            <li><a href="#">Kontakt</a></li>
+            <li><a href="#casaFriedel">Casa Friedel</a></li>
+            <li><a href="#preise">Preise</a></li>
+            <li><a href="#veno">Veno</a></li>
+            <li><a href="#contact">Kontakt</a></li>
         </ul>
     </div>
 </nav>
@@ -89,6 +89,17 @@
         </ul>
     </div>
 
+    <div class="galleria">
+        <img src="src/anbau1.jpeg">
+        <img src="src/anbau2.jpeg">
+        <img src="src/anbau3.jpeg">
+        <img src="src/anbau4.jpeg">
+        <img src="src/anbau4.jpeg">
+        <img src="src/anbau5.jpeg">
+        <img src="src/anbau6.jpeg">
+        <img src="src/anbau8.jpeg">
+    </div>
+
     <div class="section-graphic" id="preise">
         <img class="brush" src="src/brush-green.png" alt="Brush stroke orange">
         <img class="drawing" src="src/drawing-camel.png" alt="Hand drawing of a camel">
@@ -102,8 +113,11 @@
     </div>
 
     <div class="img-text-section first">
-        <p>“Veno” ist der Künstlername des Eigentümers, Wilf Leitz. Dieser benannte das Casa Friedel nach seiner Frau Friedel, die es nach seinem Tod weiterführte. Als Friedel in ihren wohlverdienten Ruhestand ging, übernahmen ihre Kinder die Betreuung des Hauses. So wird es jetzt vor allem von Karin Lübbers betreut.</p>
-        <p>Nachfolgend sehen sie einige Impressionen Lanzarotes, eingefangen durch das fotografische Auge Venos.</p>
+        <div>
+            <p>“Veno” ist der Künstlername des Eigentümers, Wilf Leitz. Dieser benannte das Casa Friedel nach seiner Frau Friedel, die es nach seinem Tod weiterführte. Als Friedel in ihren wohlverdienten Ruhestand ging, übernahmen ihre Kinder die Betreuung des Hauses. So wird es jetzt vor allem von Karin Lübbers betreut.</p>
+            <br>
+            <p>Nachfolgend sehen sie einige Impressionen Lanzarotes, eingefangen durch das fotografische Auge Venos.</p>
+        </div>
     </div>
         
     <div class="img-text-section">
@@ -131,10 +145,11 @@
 <script>
     (function() {
         Galleria.loadTheme('galleria/dist/themes/classic/galleria.classic.min.js');
-        Galleria.configure({
-            overlayBackground: '#FFFFFF'
+        Galleria.run('.galleria', {
+            responsive:true, 
+            height:.67, 
+            debug:false,
         });
-        Galleria.run('.galleria');
     }());
 </script>
 </body>
