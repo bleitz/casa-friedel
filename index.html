@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
   <title>Ferienhaus Casa Friedel</title>
    <meta name="viewport" content="width=device-width,initial-scale=1" >
   <link href='style.css' rel='stylesheet'>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Quattrocento&display=swap" rel="stylesheet">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+  <script src="galleria/dist/galleria.min.js"></script>
 </head>
 
 <body>
@@ -42,21 +44,21 @@
         <h2>Casa Friedel</h2>
     </div>
 
-    <div class="img-text-section">
+    <div class="img-text-section first">
         <p>Das Ferienhaus "Casa Friedel" in Yaiza, Lanzarote lädt ein zu einem entspannten Urlaub in der kanarischen Sonne, ruhig gelegen am Rand des Ortskerns von Yaiza, freistehend mit schönem Blick auf die Feuerberge.
         Das “Casa Friedel” umfasst zwei Wohnungen: das Haupthaus und das Apartment. Diese können entweder jeweils einzeln, oder aber auch zusammen gebucht werden. 
         Das Haus wird direkt vom Eigentümer vermietet.</p>
     </div>
         
-    <div class="img-text-section">
+    <div class="img-text-section image second">
         <img src="src/casa-friedel-section-image.jpeg" alt="Photo of casa friedel">
     </div>
 
     <h3>Haupthaus</h3>
-    <div class="img-text-section">
+    <div class="img-text-section first">
         <img src="src/plan.png" alt="Floor plan of the main house">
     </div>
-    <div class="img-text-section">
+    <div class="img-text-section second">
         <ul>
             <li>Alte, schön renovierte Finca im typischen kanarischen Stil, ideal für 2-3 Personen</li>
             <li>Großer, lichtdurchfluteter Innenhof und kleiner Patio mit Blick auf die Feuerberge</li>
@@ -65,11 +67,16 @@
         </ul>
     </div>
 
+    <div class="galleria">
+        <img src="src/hero.jpeg">
+        <img src="src/casa-friedel-section-image.jpeg">
+    </div>
+
     <h3>Nebenhaus</h3>
-    <div class="img-text-section">
+    <div class="img-text-section first">
         <img src="src/plan-apartement.png" alt="Floor plan of the studio apartment">
     </div>
-    <div class="img-text-section">
+    <div class="img-text-section second">
         <ul>
             <li>Kleines Appartement ideal für 1-2 Personen, mit Doppelbett, Sofa, Duschbad, WLAN und TV</li>
             <li>Patio mit Außendusche und Blick auf die Feierberge</li>
@@ -116,5 +123,14 @@
 
 </div>
 <script src="nav.js"></script>
+<script>
+    (function() {
+        Galleria.loadTheme('galleria/dist/themes/classic/galleria.classic.min.js');
+        Galleria.configure({
+            overlayBackground: '#FFFFFF'
+        });
+        Galleria.run('.galleria');
+    }());
+</script>
 </body>
 </html>
