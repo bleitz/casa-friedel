@@ -6,7 +6,6 @@
   font-size: 12px;
   letter-spacing: 1px;
 }
-
 body {
   overflow-x: hidden;
   margin-bottom: 800px;
@@ -14,10 +13,8 @@ body {
 .container {
   max-width: 900px;
   margin: 0 16px;
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  column-gap: 16px;
-  justify-items: stretch;
+  display: flex;
+  flex-direction: column;
 }
 
 /*Navbar styling*/
@@ -106,7 +103,6 @@ transition: all 0.2s ease;
 
 #hero {
   margin: 80px 0 120px 0;
-  grid-column: span 6;
   width: 100%;
 }
 
@@ -117,7 +113,7 @@ transition: all 0.2s ease;
 
 /*Styling section titles*/
 .section-graphic {
-  grid-column: span 6;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -142,7 +138,6 @@ h3 {
   font-family: "Quattrocento", "serif";
   font-size: 18px;
   letter-spacing: 2px;
-  grid-column: span 6;
   margin-bottom: 16px;
 }
 
@@ -219,20 +214,16 @@ h3 {
 #contact h2 {
   transform: translate(0, 60px);
 }
-
 .img-text-section {
-  grid-column: span 6;
-}
-.first {
+  display: flex;
+  flex-direction: column;
   margin-bottom: 24px;
-  display: flex;
   align-items: center;
 }
-.second {
-  margin-bottom: 40px;
-  display: flex;
-  align-items: center;
+.img-text-section > div {
+  margin-bottom: 16px;
 }
+
 .img-text-section img {
   width: 100%;
   border-radius: 8px;
@@ -248,10 +239,13 @@ h3 {
   width: 2em; /* Also needed for space (tweak if needed) */
   margin-left: -2em; /* Also needed for space (tweak if needed) */
 }
-
-.galleria {
-  grid-column: span 6; 
+.galleria { 
   margin-bottom: 40px;
+  width: 100%;
+}
+.content {
+  max-height: 300px;
+  clip-path: inset(0);
 }
 
 
@@ -304,17 +298,9 @@ h3 {
     grid-template-columns: repeat(12, 1fr);
     column-gap: 32px;
   }
-
-  #hero {
-    /*argin: 80px 0 120px 0;*/
-    grid-column: span 12;
-    /*width: 100%;*/
-  }
-
-    
+ 
   /*Styling section titles*/
   .section-graphic {
-    grid-column: span 12;
     display: flex;
     justify-content: left;
   }
@@ -335,8 +321,8 @@ h3 {
     letter-spacing: 3px;
   }
   h3 {
+    width: 100%;
     font-size: 18px;
-    grid-column: span 12;
     margin-bottom: 16px;
   }
 
@@ -411,7 +397,12 @@ h3 {
     transform: translate(0, 110px);
   }
   .galleria {
-    grid-column: span 12; 
+  }
+  .img-text-section {
+    flex-direction: row;
+  }
+  .img-text-section > * {
+    flex: 1;
   }
 
 }
