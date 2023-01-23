@@ -32,13 +32,14 @@ window.addEventListener('scroll',(e)=>{
     }, 1500);
 });
 
-var coll = document.getElementsByClassName("collapsible");
+var coll = document.getElementsByClassName("expand");
 var i;
 
 for (i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function() {
-    this.classList.toggle("open");
-    var content = this.nextElementSibling;
+    var content = this.previousElementSibling;
+    content.classList.toggle("gradient");
+    this.classList.toggle("open")
     if (content.style.maxHeight){
       content.style.maxHeight = null;
     } else {
