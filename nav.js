@@ -3,6 +3,7 @@ const navLinks = document.querySelector(".nav-links");
 const links = document.querySelectorAll(".nav-links li");
 const timer = null;
 
+//Mobile menu functionality
 hamburger.addEventListener('click', ()=>{
    //Link container opens
     navLinks.classList.toggle("open");
@@ -12,6 +13,7 @@ hamburger.addEventListener('click', ()=>{
 });
 
 
+//Nav shadow on scroll
 window.addEventListener('scroll',(e)=>{
     const nav = document.querySelector('nav');
     nav.classList.add("nav-shadow")
@@ -32,6 +34,7 @@ window.addEventListener('scroll',(e)=>{
     }, 1500);
 });
 
+//Collapsible functionality
 var coll = document.getElementsByClassName("expand");
 var i;
 
@@ -47,3 +50,14 @@ for (i = 0; i < coll.length; i++) {
     } 
   });
 }
+
+//Scroll animation
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+      });
+  });
+});
