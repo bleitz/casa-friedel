@@ -24,10 +24,10 @@
         </div>
 
         <ul class="nav-links">
-            <li><a href="#casaFriedel">Casa Friedel</a></li>
-            <li><a href="#preise">Preise</a></li>
-            <li><a href="#veno">Veno</a></li>
-            <li><a href="#contact">Kontakt</a></li>
+            <li class="casa-section"><a href="#casaFriedel">Casa Friedel</a></li>
+            <li class="preis-section"><a href="#preise">Preise</a></li>
+            <li class="veno-section"><a href="#veno">Veno</a></li>
+            <li class="contact-section"><a href="#contact">Kontakt</a></li>
         </ul>
     </div>
 </nav>
@@ -37,7 +37,7 @@
         <img src="src/hero.jpeg" alt="photo of casa friedel">
     </div>
 
-    <div class="section">
+    <section id="casa-section">
         <div class="section-graphic casaFriedel">
             <a class="anchor" id="casaFriedel"></a>
             <img class="brush" src="src/brush-orange.png" alt="Brush stroke orange">
@@ -119,18 +119,18 @@
             <div class="expand"></div>
         </div>
     
-    </div>
+    </section>
 
-    <div class="section">
+    <section id="preis-section">
         <div class="section-graphic preise">
             <a class="anchor" id="preise"></a>
             <img class="brush" src="src/brush-green.png" alt="Brush stroke orange">
             <img class="drawing" src="src/drawing-camel.png" alt="Hand drawing of a camel">
             <h2>Preise</h2>
         </div>
-    </div>
+    </section>
 
-    <div class="section">
+    <section id="veno-section">
         <div class="section-graphic veno">
             <a class="anchor" id="veno"></a>
             <img class="brush" src="src/brush-red.png" alt="Brush stroke orange">
@@ -151,7 +151,7 @@
         </div>
 
         <div class="galleria">
-            <img src="src/veno/1000.jpeg">
+            <img src="src/veno/1000.jpeg" alt="La Galeria Yaiza">
             <img src="src/veno/1002.jpeg">
             <img src="src/veno/1003.jpeg">
             <img src="src/veno/1004.jpeg">
@@ -176,9 +176,9 @@
             <img src="src/veno/1023.jpeg">
             <img src="src/veno/1024.jpeg">
         </div>
-    </div>
+    </section>
 
-    <div class="section">
+    <section id="contact-section">
         <div class="section-graphic contact">
             <a class="anchor" id="contact"></a>
             <img class="brush" src="src/brush-blue.png" alt="Brush stroke orange">
@@ -190,7 +190,7 @@
             <p>Tel. +49 172 828 6807</p>
             <a href="mailto:karin@luebbers-web.de">karin@luebbers-web.de</a>
         </div>
-    </div>
+    </section>
 
     <footer>
         <img src="src/footer.png" alt="Footer image of mountains">
@@ -202,16 +202,7 @@
 
 
 </div>
-<script src="nav.js"></script>
-<script>
-    (function() {
-        Galleria.loadTheme('galleria/dist/themes/classic/galleria.classic.min.js');
-        Galleria.run('.galleria', {
-            responsive:true, 
-            height:.67, 
-            debug:false,
-        });
-    }());
-</script>
+<script src="main.js"></script>
+
 </body>
 </html>

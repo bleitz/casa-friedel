@@ -14,7 +14,7 @@ body {
   max-width: 900px;
   margin: 0 16px;
 }
-.section {
+section {
   margin-bottom: 120px;
 }
 
@@ -82,6 +82,9 @@ nav {
 
 .nav-links li {
 position: relative;
+}
+.nav-links li.active {
+  font-weight: bold;
 }
 
 .hamburger div {
@@ -327,11 +330,11 @@ footer a:hover {
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
     background-color: #ffffff;
-    box-shadow: 0 0px 0px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 1s ease;
   }
   .nav-base-shadow {
-    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
-    transition: box-shadow 1s ease;
+    
   }
   .nav-shadow {
     box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
