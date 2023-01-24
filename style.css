@@ -118,6 +118,12 @@ transition: all 0.2s ease;
   display: flex;
   justify-content: center;
 }
+a.anchor {
+  display: block;
+  position: relative;
+  top: -120px;
+  visibility: hidden;
+}
 
 /*General section graphic elements*/
 .drawing {
@@ -144,75 +150,75 @@ h3 {
 
 /*Tweaking individual position and size*/
 /*Casa Friedel*/
-#casaFriedel {
+.casaFriedel {
   height: 85px;
   margin: 0 0 40px 0;
 }
-#casaFriedel .drawing {
+.casaFriedel .drawing {
   position: absolute;
   width: 100px;
 }
-#casaFriedel .brush {
+.casaFriedel .brush {
   width: 135px;
   position: absolute;
   transform: translate(0, 15px);
 }
-#casaFriedel h2 {
+.casaFriedel h2 {
   transform: translate(0, 45px);
 }
 /*Preise*/
-#preise {
+.preise {
   height: 90px;
   margin: 0 0 40px 0;
 }
-#preise .drawing {
+.preise .drawing {
   position: absolute;
   width: 75px; 
   transform: translate(-70px, 0)
 }
-#preise .brush {
+.preise .brush {
   width: 145px;
   position: absolute;
   transform: translate(-50px, 15px);
 }
-#preise h2 {
+.preise h2 {
   transform: translate(0, 45px);
 }
 /*Veno*/
-#veno {
+.veno {
   height: 110px;
   margin: 0 0 40px 0;
 }
-#veno .drawing {
+.veno .drawing {
   position: absolute;
   width: 100px;
   transform: translate(0, 0)
 }
-#veno .brush {
+.veno .brush {
   width: 100px;
   position: absolute;
   transform: translate(10px, 20px);
   rotate: 12deg;
 }
-#veno h2 {
+.veno h2 {
   transform: translate(0, 90px);
 }
 /*contact*/
-#contact {
-  height: 70px;
-  margin: 0 0 40px 0;
+.contact {
+  height: 100px;
+  margin: 0 0 4git 0px 0;
 }
-#contact .drawing {
+.contact .drawing {
   position: absolute;
   width: 80px;
   transform: translate(-35px, 0px);
 }
-#contact .brush {
+.contact .brush {
   width: 80px;
   position: absolute;
   transform: translate(-50px, 35px);
 }
-#contact h2 {
+.contact h2 {
   transform: translate(0, 60px);
 }
 .img-text-section {
@@ -235,7 +241,7 @@ h3 {
 .img-text-section ul li::before {
   content: "\25A0";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
   color: #ADC2DA; /* Change the color */
-  font-weight: bold; /* If you want it to be bold */
+  font-weight: bolder; /* If you want it to be bold */
   display: inline-block; /* Needed to add space between the bullet and the text */
   width: 1em; /* Also needed for space (tweak if needed) */
   margin-left: -1em; /* Also needed for space (tweak if needed) */
@@ -278,7 +284,13 @@ h3 {
   margin: 0 auto;
   color: #000000;
 }
-
+.contact-details  {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 
 
@@ -337,6 +349,9 @@ h3 {
     display: flex;
     justify-content: left;
   }
+  a.anchor {
+    top: -150px;
+}
 
   /*General section graphic elements*/
   .drawing {
@@ -359,72 +374,73 @@ h3 {
 
   /*Tweaking individual position and size*/
   /*Casa Friedel*/
-  #casaFriedel {
+  .casaFriedel {
     height: 160px;
   }
-  #casaFriedel .drawing {
+  .casaFriedel .drawing {
     position: absolute;
     width: 180px;
     transform: translate(-75px, 0px);
   }
-  #casaFriedel .brush {
+  .casaFriedel .brush {
     width: 280px;
     position: absolute;
     transform: translate(-75px, 15px);
   }
-  #casaFriedel h2 {
+  .casaFriedel h2 {
     transform: translate(0, 75px);
   }
   /*Preise*/
-  #preise {
+  .preise {
     height: 90px;
   }
-  #preise .drawing {
+  .preise .drawing {
     position: absolute;
     width: 100px; 
     transform: translate(-100px, 0)
   }
-  #preise .brush {
+  .preise .brush {
     width: 225px;
     position: absolute;
     transform: translate(-75px, 15px);
   }
-  #preise h2 {
+  .preise h2 {
     transform: translate(0, 70px);
   }
   /*Veno*/
-  #veno {
+  .veno {
     height: 175px;
   }
-  #veno .drawing {
+  .veno .drawing {
     position: absolute;
     width: 140px;
     transform: translate(-70px, 0)
   }
-  #veno .brush {
+  .veno .brush {
     width: 140px;
     position: absolute;
     transform: translate(-30px, 50px);
     rotate: 0deg;
   }
-  #veno h2 {
+  .veno h2 {
     transform: translate(0, 110px);
   }
   /*contact*/
-  #contact {
-    height: 70px;
+  .contact {
+    height: 140px;
+    margin: 0 0 40px 0;
   }
-  #contact .drawing {
+  .contact .drawing {
     position: absolute;
     width: 140px;
     transform: translate(-70px, 0px);
   }
-  #contact .brush {
+  .contact .brush {
     width: 150px;
     position: absolute;
     transform: translate(-30px, 50px);
   }
-  #contact h2 {
+  .contact h2 {
     transform: translate(0, 110px);
   }
   .img-text-section {
