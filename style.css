@@ -230,21 +230,22 @@ h3 {
 .img-text-section > div {
   margin-bottom: 16px;
 }
-
 .img-text-section img {
   width: 100%;
   border-radius: 8px;
 }
 .img-text-section ul {
   list-style: none; /* Remove default bullets */
+/*   margin-left: 24px;
+  margin-right: 8px; */
 }
 .img-text-section ul li::before {
   content: "\25A0";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
   color: #ADC2DA; /* Change the color */
   font-weight: bolder; /* If you want it to be bold */
   display: inline-block; /* Needed to add space between the bullet and the text */
-  width: 1em; /* Also needed for space (tweak if needed) */
-  margin-left: -1em; /* Also needed for space (tweak if needed) */
+  width: 1.5em; /* Also needed for space (tweak if needed) */
+  margin-left: -1.5em; /* Also needed for space (tweak if needed) */
 }
 .galleria { 
   margin-bottom: 40px;
@@ -449,5 +450,15 @@ h3 {
   .img-text-section > * {
     flex: 1;
   }
+  .img-text-section ul {
+/*     margin-left: 34px; */
+  }
+  .img-text-section > *:first-child {
+    margin-right: 24px;
+  }
+  .img-text-section > *:nth-child(2) {
+    margin-left: 24px;
+  }
+
 
 }
