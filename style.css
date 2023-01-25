@@ -305,6 +305,20 @@ h3 {
 .expand.open::after {
   content: "-"; 
 }
+table.preis-tabelle {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+table.preis-tabelle td, table.preis-tabelle th {
+  padding: 10px 5px;
+}
+table.preis-tabelle thead th, .left-header {
+  font-size: 12px;
+  font-weight: bold;
+  color: #707070;
+  text-align: center;
+}
 .contact-details  {
   margin: 0 auto;
   padding-top: 80px;
