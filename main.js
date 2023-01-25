@@ -5,12 +5,19 @@ const timer = null;
 
 //Mobile menu functionality
 hamburger.addEventListener('click', ()=>{
-   //Link container opens
-    navLinks.classList.toggle("open");
-
-    //Hamburger Animation
-    hamburger.classList.toggle("toggle");
+    navLinks.classList.toggle("open"); //Link container opens
+    hamburger.classList.toggle("toggle"); //Hamburger Animation
+    /* document.body.classList.toggle("fixed-position") //Prevents scroll */
 });
+
+links.forEach(link => {
+  link.addEventListener('click', ()=>{
+    /* git  */
+    navLinks.classList.toggle("open");
+    hamburger.classList.toggle("toggle");
+  });
+});
+
 
 
 //Nav shadow on scroll
@@ -55,7 +62,7 @@ for (i = 0; i < coll.length; i++) {
            behavior: "smooth"
       });
     }; 
-    
+
     this.classList.toggle("open")
     if (content.style.maxHeight){
       content.style.maxHeight = null;
@@ -69,7 +76,6 @@ for (i = 0; i < coll.length; i++) {
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
       e.preventDefault();
-
       document.querySelector(this.getAttribute('href')).scrollIntoView({
           behavior: 'smooth'
       });

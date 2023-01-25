@@ -10,6 +10,9 @@ body {
   overflow-x: hidden;
   margin-bottom: 800px;
 }
+.fixed-position {
+  position: fixed;
+}
 .container {
   max-width: 900px;
   margin: 0 16px;
