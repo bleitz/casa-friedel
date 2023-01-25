@@ -42,6 +42,20 @@ for (i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function() {
     var content = this.previousElementSibling;
     content.classList.toggle("gradient");
+
+    //If the collapsible is being closed, then scroll up
+    if (this.classList.contains("open")) {
+      const offset = 150;
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = content.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;    
+      window.scrollTo({
+           top: offsetPosition,
+           behavior: "smooth"
+      });
+    }; 
+    
     this.classList.toggle("open")
     if (content.style.maxHeight){
       content.style.maxHeight = null;

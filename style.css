@@ -252,7 +252,7 @@ h3 {
   margin-left: -1.5em; /* Also needed for space (tweak if needed) */
 }
 .galleria { 
-  margin-bottom: 40px;
+  /* margin-bottom: 40px; */
   width: 100%;
 }
 .collapsible {
@@ -262,6 +262,7 @@ h3 {
   max-height: 100px;
   clip-path: inset(0);
   position: relative;
+  transition: max-height 1s ease;
 }
 .gradient::after {
   content: "";
@@ -273,9 +274,9 @@ h3 {
   background: linear-gradient(to bottom, rgba(255,0,0,0), rgb(255, 255, 255, 1));
   z-index: 2;
 }
-.expand {
-  width: 46px;
-  height: 46px;
+.expand { 
+  width: 34px;
+  height: 34px;
   margin: 0 auto;
   z-index: 5;
   border-color: #000000;
@@ -283,11 +284,15 @@ h3 {
   border-radius: 50%;
   display: flex;
   align-items: center;
+  transform: translate(0, 16px);
 }
 .expand::after {
-  content: "\002B"; 
+  content: "+"; 
   margin: 0 auto;
   color: #000000;
+}
+.expand.open::after {
+  content: "-"; 
 }
 .contact-details  {
   margin: 0 auto;
