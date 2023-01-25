@@ -282,8 +282,7 @@ h3 {
   height: 34px;
   margin: 0 auto;
   z-index: 5;
-  border-color: #000000;
-  border-style: solid;
+  border: 1px solid black ;
   border-radius: 50%;
   display: flex;
   align-items: center;
