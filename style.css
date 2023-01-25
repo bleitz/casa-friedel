@@ -286,6 +286,14 @@ h3 {
   align-items: center;
   transform: translate(0, 16px);
 }
+.expand:hover {
+  background-color: #ADC2DA;
+  border-color: white;
+  cursor: pointer;
+}
+.expand:hover::after {
+  color: #FFF;
+}
 .expand::after {
   content: "+"; 
   margin: 0 auto;
