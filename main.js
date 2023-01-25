@@ -11,11 +11,13 @@ hamburger.addEventListener('click', ()=>{
 });
 
 links.forEach(link => {
-  link.addEventListener('click', ()=>{
-    /* git  */
-    navLinks.classList.toggle("open");
-    hamburger.classList.toggle("toggle");
-  });
+  if (screen.width <= 1024) {
+    link.addEventListener('click', ()=>{
+      /* document.body.classList.toggle("fixed-position") //Enables scroll */
+      navLinks.classList.toggle("open");  
+      hamburger.classList.toggle("toggle");
+    });
+  }
 });
 
 
