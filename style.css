@@ -78,16 +78,19 @@ nav {
 }
 .nav-links li a {
     text-decoration: none;
+    z-index: 1;
   }
 .nav-links li a:hover {
     color: #ADC2DA;
 }
-
 .nav-links li {
 position: relative;
 }
 .nav-links li.active {
   font-weight: bold;
+}
+.nav-links li img {
+  display: none;
 }
 
 .hamburger div {
@@ -133,12 +136,10 @@ a.anchor {
 }
 
 /*General section graphic elements*/
-.drawing {
+.drawing, .brush {
   position: absolute;
 }
-.brush {
-  position: absolute;
-}
+
 h2 {
   font-family: "Quattrocento", "serif";
   text-align: center;
@@ -364,11 +365,11 @@ footer a:hover {
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
     background-color: #ffffff;
-    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: none;
     transition: box-shadow 1s ease;
   }
   .nav-base-shadow {
-    
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
   }
   .nav-shadow {
     box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
@@ -385,6 +386,36 @@ footer a:hover {
     pointer-events: all;
     opacity: 1;
   }
+  .nav-links li {
+    display: flex;
+    justify-content: center;
+  }
+ 
+  .nav-links li img {
+    display: block;
+    position: absolute;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 300ms ease;
+  }
+  .visible {
+    opacity: 1 !important;
+  }
+
+  .casa-section {
+    width: 50px;
+  }
+  .preis-section {
+    width: 70px;
+  }
+  .veno-section {
+    width: 30px;
+  }
+  .contact-section {
+    width: 60px;
+  }
+
+
   .logo img {
     max-height: 58px;
     margin: 16px 16px;

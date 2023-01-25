@@ -1,7 +1,7 @@
 const hamburger = document.querySelector(".hamburger");
 const navLinks = document.querySelector(".nav-links");
 const links = document.querySelectorAll(".nav-links li");
-const timer = null;
+var timer = null;
 
 //Mobile menu functionality
 hamburger.addEventListener('click', ()=>{
@@ -87,16 +87,25 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 //Gallerie
 (function() {
   Galleria.loadTheme('galleria/dist/themes/classic/galleria.classic.min.js');
-  Galleria.run('.galleria', {
+  if (screen.width < 1024) {
+    Galleria.run('.galleria', {
       responsive:true, 
-      height:.67, 
+      height:1, 
       debug:false,
-  });
+    });
+  } else {
+      Galleria.run('.galleria', {
+        responsive:true, 
+        height:.75, 
+        debug:false,
+      });
+  }
+  
 }());
 
 //Navigation: active element
 const sections = document.querySelectorAll("section");
-const navLi = document.querySelectorAll("nav .nav-container nav-links li");
+const navImg = document.querySelectorAll(".nav-links li img");
 
 window.addEventListener("scroll", () => {
   let current = "";
@@ -104,15 +113,17 @@ window.addEventListener("scroll", () => {
   sections.forEach((section) => {
     const sectionTop = section.offsetTop;
     const sectionHeight = section.clientHeight;
-    if (window.pageYOffset >= sectionTop - sectionHeight / 3) {
+    const sectionBottom = sectionTop + sectionHeight
+
+    if (window.pageYOffset >= (sectionTop - 160) && window.pageYOffset < sectionBottom ) {
       current = section.getAttribute("id");
     }
   });
 
-  navLi.forEach((li) => {
-    li.classList.remove("active");
-    if (li.classList.contains(current)) {
-      li.classList.add("active");
+  navImg.forEach((img) => {
+    img.classList.remove("visible");
+    if (img.classList.contains(current)) {
+      img.classList.add("visible");
     }
   });
 });
