@@ -247,6 +247,9 @@ h3 {
 /*   margin-left: 24px;
   margin-right: 8px; */
 }
+.img-text-section ul li {
+  padding-left: 16px;
+}
 .img-text-section ul li::before {
   content: "\25A0";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
   color: #ADC2DA; /* Change the color */
@@ -288,14 +291,6 @@ h3 {
   display: flex;
   align-items: center;
   transform: translate(0, 8px);
-}
-.expand:hover {
-  background-color: #ADC2DA;
-  border-color: white;
-  cursor: pointer;
-}
-.expand:hover::after {
-  color: #FFF;
 }
 .expand::after {
   content: "+"; 
@@ -404,15 +399,19 @@ footer a:hover {
 
   .casa-section {
     width: 50px;
+    top: -7px
   }
   .preis-section {
     width: 70px;
+    top: -12px
   }
   .veno-section {
     width: 30px;
+    top: -12px
   }
   .contact-section {
     width: 60px;
+    top: -10px
   }
 
 
@@ -540,6 +539,14 @@ footer a:hover {
   }
   .img-text-section > *:nth-child(2) {
     margin-left: 24px;
+  }
+  .expand:hover {
+    background-color: #ADC2DA;
+    border-color: white;
+    cursor: pointer;
+  }
+  .expand:hover::after {
+    color: #FFF;
   }
 
 

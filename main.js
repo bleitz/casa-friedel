@@ -34,13 +34,13 @@ window.addEventListener('scroll',(e)=>{
         nav.classList.remove("nav-base-shadow");
     }
 
-    //Adds a thicker shadow while scrolling and 1500ms thereafter, then removes it
+    //Adds a thicker shadow while scrolling and Xms thereafter, then removes it
     if (timer !== null) {
         clearTimeout(timer);
     }
     timer = setTimeout(() => {
         nav.classList.remove("nav-shadow")
-    }, 1500);
+    }, 50);
 });
 
 //Collapsible functionality
