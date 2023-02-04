@@ -1,6 +1,7 @@
 const hamburger = document.querySelector(".hamburger");
-const navLinks = document.querySelector(".nav-links");
+const navLinks = document.querySelector(".menu-items");
 const links = document.querySelectorAll(".nav-links li");
+
 var timer = null;
 
 //Mobile menu functionality
