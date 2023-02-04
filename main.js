@@ -1,9 +1,7 @@
-const hamburger = document.querySelector(".hamburger");
-const menuItems = document.querySelector(".menu-items");
-const links = document.querySelectorAll(".nav-links li");
+
+//Display content in the selected language
 const langOptions = document.querySelectorAll(".select-box__option");
 const langVariants = document.querySelectorAll(".de, .es, .en")
-var timer = null;
 
 function setLang(lang) {
   langVariants.forEach(langVariant => {
@@ -17,49 +15,51 @@ function setLang(lang) {
   });
 }
 
-setLang('de');
+setLang('de'); //Default; runs on pageload
+
+langOptions.forEach(langOption => {
+  langOption.addEventListener('click', (e)=>{
+    const selectedLang = e.target.getAttribute('for');
+    setLang(selectedLang);
+  });
+});
 
 //Mobile menu functionality
+const hamburger = document.querySelector(".hamburger");
+const menuItems = document.querySelector(".menu-items");
+const links = document.querySelectorAll(".nav-links li");
+
 hamburger.addEventListener('click', ()=>{
   menuItems.classList.toggle("open"); //Link container opens
     hamburger.classList.toggle("toggle"); //Hamburger Animation
-    /* document.body.classList.toggle("fixed-position") //Prevents scroll */
 });
 
-//On mobile devices, closes menu when linked is clicked
+//On mobile devices, close menu when linked is clicked
 links.forEach(link => {
   if (screen.width <= 1024) {
     link.addEventListener('click', ()=>{
-      /* document.body.classList.toggle("fixed-position") //Enables scroll */
       menuItems.classList.toggle("open");  
       hamburger.classList.toggle("toggle");
     });
   }
 });
 
-//On language selection, navigates to right HTML
-langOptions.forEach(langOption => {
-    langOption.addEventListener('click', (e)=>{
-      const selectedLang = e.target.getAttribute('for');
-      setLang(selectedLang);
-    });
-});
 
+//When scrolling, add a heavier shadow
+var timer = null;
 
-
-//Nav shadow on scroll
 window.addEventListener('scroll',(e)=>{
     const nav = document.querySelector('nav');
     nav.classList.add("nav-shadow")
 
-    //Adds light shadow unless scroll is at the very top of the page   
+    //When scroll is at the very top of the page, don't show shadow
     if(window.pageYOffset>0){
         nav.classList.add("nav-base-shadow");
       }else{
         nav.classList.remove("nav-base-shadow");
     }
 
-    //Adds a thicker shadow while scrolling and Xms thereafter, then removes it
+    //Adds a thicker shadow while scrolling then removes it
     if (timer !== null) {
         clearTimeout(timer);
     }
@@ -68,7 +68,7 @@ window.addEventListener('scroll',(e)=>{
     }, 50);
 });
 
-//Collapsible functionality
+//Collapsible section functionality
 var coll = document.getElementsByClassName("expand");
 var i;
 
@@ -99,7 +99,7 @@ for (i = 0; i < coll.length; i++) {
   });
 }
 
-//Scroll animation
+//Smooth scroll animation on menu link click
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
       e.preventDefault();
@@ -128,7 +128,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   
 }());
 
-//Navigation: active element
+//Navigation: highlight the current section in the desktop menu
 const sections = document.querySelectorAll("section");
 const navImg = document.querySelectorAll(".nav-links li img");
 
