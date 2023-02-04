@@ -478,20 +478,27 @@ footer a:hover {
     margin: 0 auto;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
   }
   .menu-items {
     display: flex;
+    align-items: center;
     flex-direction: row;
     pointer-events: all;
   }
   .nav-links {
     display: flex;
+    width: auto;
+    margin-right: 24px;
+  }
+  .select-box {
+    margin: 0 0;
   }
   
   .nav-links li {
     display: flex;
     justify-content: center;
-    margin: 0 16px;
+    margin: 0 24px;
   }
  
   .nav-links li img {
@@ -507,22 +514,23 @@ footer a:hover {
 
   .casa-section {
     width: 50px;
-    top: -7px
+    transform: translate(0, -7px);
   }
   .preis-section {
     width: 70px;
-    top: -12px
+    transform: translate(0, -12px);
   }
   .veno-section {
     width: 30px;
-    top: -12px
+    transform: translate(0, -12px);
   }
   .contact-section {
     width: 60px;
-    top: -10px
+    transform: translate(0, -10px);
   }
-
-
+  .logo {
+    margin: 0 0;
+  }
   .logo img {
     max-height: 58px;
     margin: 16px 16px;
