@@ -1,3 +1,79 @@
+class NavigationBar extends HTMLElement {
+  connectedCallback() {
+      this.innerHTML = `
+<nav>
+      <div class="nav-container">
+          <div class="logo">
+              <img src="src/logo.png" alt="Casa Friedel Logo">
+          </div>
+  
+          <div class="hamburger">
+              <div class="line1"></div>
+              <div class="line2"></div>
+              <div class="line3"></div>
+          </div>
+  
+          <div class="menu-items">
+              <ul class="nav-links">
+                  <li>
+                      <img class="casa-section" src="src/brush-orange.png" alt="Brush stroke orange">
+                      <a href="#casaFriedel">Casa Friedel</a>
+                  </li>
+                  <li>
+                      <img class="preis-section" src="src/brush-green.png" alt="Brush stroke green">
+                      <a href="#preise" class="de">Preise</a>
+                      <a href="#preise" class="en">Prices</a>
+                      <a href="#preise" class="es">Precios</a>
+                  </li>
+                  <li>
+                      <img class="veno-section" src="src/brush-red.png" alt="Brush stroke red">
+                      <a href="#veno">Veno</a>
+                  </li>
+                  <li>
+                      <img class="contact-section" src="src/brush-blue.png" alt="Brush stroke blue">
+                      <a href="#contact" class="de">Kontakt</a>
+                      <a href="#contact" class="en">Contact</a>
+                      <a href="#contact" class="es">Contacto</a>
+                  </li>
+              </ul>
+          
+              <div class="select-box">
+                  <div class="select-box__current" tabindex="1">
+                      <div class="select-box__value">
+                          <input class="select-box__input" type="radio" id="en" value="1" name="Ben" checked="checked"/>
+                          <p class="select-box__input-text">EN</p>
+                      </div>
+                      <div class="select-box__value">
+                          <input class="select-box__input" type="radio" id="es" value="2" name="Ben" checked="checked"/>
+                          <p class="select-box__input-text">ES</p>
+                      </div>
+                      <div class="select-box__value">
+                          <input class="select-box__input" type="radio" id="de" value="3" name="Ben" checked="checked"/>
+                          <p class="select-box__input-text">DE</p>
+                      </div>
+                      <img class="select-box__icon" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" aria-hidden="true"/>
+                  </div>
+                  <ul class="select-box__list">
+                      <li>
+                          <label class="select-box__option" for="en" aria-hidden="aria-hidden">EN (English)</label>
+                      </li>
+                      <li>
+                          <label class="select-box__option" for="es" aria-hidden="aria-hidden">ES (Español)</label>
+                      </li>
+                      <li>
+                          <label class="select-box__option" for="de" aria-hidden="aria-hidden">DE (Deutsch)</label>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </nav>
+      `;
+  }
+}
+
+customElements.define('navigation-bar', NavigationBar);
+
 
 //Display content in the selected language
 const langOptions = document.querySelectorAll(".select-box__option");

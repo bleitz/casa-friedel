@@ -23,7 +23,7 @@ body {
   margin: 0 16px;
 }
 section {
-  margin-bottom: 120px;
+  margin-bottom: 160px;
 }
 
 /*Navbar styling*/
@@ -228,7 +228,7 @@ h3 {
 .img-text-section {
   display: flex;
   flex-direction: column;
-  margin-bottom: 24px;
+  margin-bottom: 40px;
   align-items: center;
 }
 .img-text-section > div {
@@ -425,8 +425,8 @@ table.preis-tabelle thead th, .left-header {
 
 .contact-details  {
   margin: 0 auto;
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -438,7 +438,7 @@ footer {
   flex-direction: column;
 }
 footer > * {
-  width: 100%;
+  width: 80%;
   margin: 0 auto; 
   margin-bottom: 40px;
   text-align: center;
@@ -446,6 +446,8 @@ footer > * {
 }
 footer a {
   text-decoration: none;  
+}
+footer li {
   margin: 20px 0;
 }
 footer a:hover {
@@ -472,6 +474,9 @@ footer a:hover {
     background-color: #ffffff;
     box-shadow: none;
     transition: box-shadow 1s ease;
+  }
+  section {
+    margin-bottom: 200px;
   }
   .nav-base-shadow {
     box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);

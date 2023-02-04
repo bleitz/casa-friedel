@@ -4,8 +4,9 @@
     <title>Ferienhaus Casa Friedel</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta property="og:title" content="Ferienhaus Casa Friedel">
-    <meta property="og:description" content="Das Ferienhaus 'Casa Friedel' in Yaiza, Lanzarote lädt ein zu einem entspannten Urlaub in der kanarischen Sonne">
+    <meta name="description" property="og:description" content="Das Ferienhaus 'Casa Friedel' in Yaiza, Lanzarote lädt ein zu einem entspannten Urlaub in der kanarischen Sonne.">
     <meta property="og:image" content="https://bleitz.github.io/casa-friedel/src/logo.png">
+    <meta name="keywords" content="Ferienhaus Lanzarote, Ferienwohnung Lanzarote, Wohnung Lanzarote, Gasthaus Lanzarote, Hotel Lanzarote">
     <link href='style.css' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Quattrocento&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
@@ -14,73 +15,8 @@
 
 <body>
 
-<nav>
-    <div class="nav-container">
-        <div class="logo">
-            <img src="src/logo.png" alt="Casa Friedel Logo">
-        </div>
-
-        <div class="hamburger">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-        </div>
-
-        <div class="menu-items">
-            <ul class="nav-links">
-                <li>
-                    <img class="casa-section" src="src/brush-orange.png" alt="Brush stroke orange">
-                    <a href="#casaFriedel">Casa Friedel</a>
-                </li>
-                <li>
-                    <img class="preis-section" src="src/brush-green.png" alt="Brush stroke green">
-                    <a href="#preise" class="de">Preise</a>
-                    <a href="#preise" class="en">Prices</a>
-                    <a href="#preise" class="es">Precios</a>
-                </li>
-                <li>
-                    <img class="veno-section" src="src/brush-red.png" alt="Brush stroke red">
-                    <a href="#veno">Veno</a>
-                </li>
-                <li>
-                    <img class="contact-section" src="src/brush-blue.png" alt="Brush stroke blue">
-                    <a href="#contact" class="de">Kontakt</a>
-                    <a href="#contact" class="en">Contact</a>
-                    <a href="#contact" class="es">Contacto</a>
-                </li>
-            </ul>
-        
-            <div class="select-box">
-                <div class="select-box__current" tabindex="1">
-                    <div class="select-box__value">
-                        <input class="select-box__input" type="radio" id="en" value="1" name="Ben" checked="checked"/>
-                        <p class="select-box__input-text">EN</p>
-                    </div>
-                    <div class="select-box__value">
-                        <input class="select-box__input" type="radio" id="es" value="2" name="Ben" checked="checked"/>
-                        <p class="select-box__input-text">ES</p>
-                    </div>
-                    <div class="select-box__value">
-                        <input class="select-box__input" type="radio" id="de" value="3" name="Ben" checked="checked"/>
-                        <p class="select-box__input-text">DE</p>
-                    </div>
-                    <img class="select-box__icon" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" aria-hidden="true"/>
-                </div>
-                <ul class="select-box__list">
-                    <li>
-                        <label class="select-box__option" for="en" aria-hidden="aria-hidden">EN (English)</label>
-                    </li>
-                    <li>
-                        <label class="select-box__option" for="es" aria-hidden="aria-hidden">ES (Español)</label>
-                    </li>
-                    <li>
-                        <label class="select-box__option" for="de" aria-hidden="aria-hidden">DE (Deutsch)</label>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</nav>
+<!-- Nav custom element to be reused across files -->
+<navigation-bar></navigation-bar>
 
 <div class="container">
     <div id="hero">
@@ -352,7 +288,7 @@
             <img class="drawing" src="src/drawing-shack.png" alt="Hand drawing of a shack with mountains and palm trees">
             <h2 class="de">Kontakt & Buchungen</h2>
             <h2 class="en">Contact & Bookings</h2>
-            <h2 class="es">Contacto y reservas</h2>
+            <h2 class="es">Contacto y Reservas</h2>
         </div>
         <div class="contact-details">
             <h3>Karin Lübbers</h3>
@@ -365,14 +301,14 @@
         <img src="src/footer.jpg" alt="Footer image of mountains">
         <ul class="footer-links">
             <li>
-                <a href="de/legal.html#impressum" class="de">Impressum</a>
-                <a href="de/legal.html#impressum" class="en">Imprint</a>
-                <a href="de/legal.html#impressum" class="es">Aviso Legal</a>
+                <a href="legal.html#impressum" class="de">Impressum</a>
+                <a href="legal.html#impressum" class="en">Imprint</a>
+                <a href="legal.html#impressum" class="es">Aviso Legal</a>
             </li>
             <li>
-                <a href="de/legal.html#datenschutz" class="de">Datenschutz</a>
-                <a href="de/legal.html#datenschutz" class="en">Privacy Policy</a>
-                <a href="de/legal.html#datenschutz" class="es">Declaratión de privacidad</a>
+                <a href="legal.html#datenschutz" class="de">Datenschutz</a>
+                <a href="legal.html#datenschutz" class="en">Privacy Policy</a>
+                <a href="legal.html#datenschutz" class="es">Declaratión de privacidad</a>
             </li>
         </ul>
     </footer> 
