@@ -438,14 +438,15 @@ footer {
   flex-direction: column;
 }
 footer > * {
-  width: 80%;
-  margin: 0 auto;
-  margin-bottom: 20px;
+  width: 100%;
+  margin: 0 auto; 
+  margin-bottom: 40px;
   text-align: center;
   list-style: none;
 }
 footer a {
   text-decoration: none;  
+  margin: 20px 0;
 }
 footer a:hover {
   color: #ADC2DA;
