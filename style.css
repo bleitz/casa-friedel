@@ -493,6 +493,8 @@ footer a:hover {
   }
   .select-box {
     margin: 0 0;
+    text-align: left;
+    width: 100px;
   }
   
   .nav-links li {

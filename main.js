@@ -1,24 +1,43 @@
 const hamburger = document.querySelector(".hamburger");
-const navLinks = document.querySelector(".menu-items");
+const menuItems = document.querySelector(".menu-items");
 const links = document.querySelectorAll(".nav-links li");
+const langOptions = document.querySelectorAll(".select-box__option");
 
 var timer = null;
 
 //Mobile menu functionality
 hamburger.addEventListener('click', ()=>{
-    navLinks.classList.toggle("open"); //Link container opens
+  menuItems.classList.toggle("open"); //Link container opens
     hamburger.classList.toggle("toggle"); //Hamburger Animation
     /* document.body.classList.toggle("fixed-position") //Prevents scroll */
 });
 
+//On mobile devices, closes menu when linked is clicked
 links.forEach(link => {
   if (screen.width <= 1024) {
     link.addEventListener('click', ()=>{
       /* document.body.classList.toggle("fixed-position") //Enables scroll */
-      navLinks.classList.toggle("open");  
+      menuItems.classList.toggle("open");  
       hamburger.classList.toggle("toggle");
     });
   }
+});
+
+//On language selection, navigates to right HTML
+langOptions.forEach(langOption => {
+    langOption.addEventListener('click', (e)=>{
+      switch(e.target.getAttribute('for')) {
+        case 'de':
+          window.location.href = '../de/index.html';
+          break;
+        case 'es':
+          window.location.href = '../es/index.html';
+          break;
+        case 'en':
+          window.location.href = '../en/index.html';
+          break;
+      }
+    });
 });
 
 
