@@ -6,6 +6,11 @@
   font-size: 12px;
   letter-spacing: 1px;
 }
+
+.inactiveLang {
+  display: none;
+}
+
 body {
   overflow-x: hidden;
   margin-bottom: 80px;

@@ -2,8 +2,22 @@ const hamburger = document.querySelector(".hamburger");
 const menuItems = document.querySelector(".menu-items");
 const links = document.querySelectorAll(".nav-links li");
 const langOptions = document.querySelectorAll(".select-box__option");
-
+const langVariants = document.querySelectorAll(".de, .es, .en")
 var timer = null;
+
+function setLang(lang) {
+  langVariants.forEach(langVariant => {
+    if(langVariant.classList.contains(lang)) {
+      console.log('if');
+      langVariant.classList.remove('inactiveLang');
+    } else {
+      console.log('else');
+      langVariant.classList.add('inactiveLang');
+    }
+  });
+}
+
+setLang('de');
 
 //Mobile menu functionality
 hamburger.addEventListener('click', ()=>{
@@ -26,17 +40,8 @@ links.forEach(link => {
 //On language selection, navigates to right HTML
 langOptions.forEach(langOption => {
     langOption.addEventListener('click', (e)=>{
-      switch(e.target.getAttribute('for')) {
-        case 'de':
-          window.location.href = '../de/index.html';
-          break;
-        case 'es':
-          window.location.href = '../es/index.html';
-          break;
-        case 'en':
-          window.location.href = '../en/index.html';
-          break;
-      }
+      const selectedLang = e.target.getAttribute('for');
+      setLang(selectedLang);
     });
 });
 
