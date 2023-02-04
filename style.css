@@ -23,27 +23,19 @@ section {
 
 /*Navbar styling*/
 nav {
-  height: auto;
-  width: 100vw;
+  width: 100%;
   background-color: #ffffff;
   box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
   display: flex;
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 10;
 }
 .nav-container {
   display: flex;
+  flex-direction: column;
   width: 100%;
   max-width: 900px;
-}
-.menu-items {
-  position: fixed;
-  opacity: 0;
-  pointer-events: none;
-  z-index: 12;
-  background-color: #ffffff;
-  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
 }
 .logo img {
   max-height: 48px;
@@ -58,25 +50,23 @@ nav {
   position: absolute;
   cursor: pointer;
   right: 5%;
-  top: 50%;
-  transform: translate(-5%, -50%);
+  transform: translate(0, 24px);
   z-index: 13;
   transition: all 0.7s ease;
 }
 .nav-links {
     font-size: 22px;
-    display: flex;
-    padding-top: 32px;
     width: 100vw;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
     list-style: none;
-    height: 60vh;
   }
+.menu-items {
+  display: none;
+  flex-direction: column;
+  pointer-events: none;
+}
 .menu-items.open {
+    display: flex;
     pointer-events: all;
-    opacity: 1;
 }
 .nav-links li a {
     text-decoration: none;
@@ -86,11 +76,10 @@ nav {
     color: #ADC2DA;
 }
 .nav-links li {
-position: relative;
+  text-align: center;
+  margin: 34px auto;
 }
-.nav-links li.active {
-  font-weight: bold;
-}
+
 .nav-links li img {
   display: none;
 }
@@ -114,7 +103,7 @@ transition: all 0.2s ease;
 }
 
 #hero {
-  margin: 80px 0 120px 0;
+  margin: 140px 0 120px 0;
   width: 100%;
 }
 
@@ -324,7 +313,7 @@ table.preis-tabelle thead th, .left-header {
 
 .select-box {
   position: relative;
-  margin: 40px auto;
+  margin: 56px auto;
   display: block;
   width: 150px;
   font-size: 18px;
@@ -487,20 +476,22 @@ footer a:hover {
   }
   .nav-container {
     margin: 0 auto;
-    display: flex;
+    flex-direction: row;
     align-items: center;
   }
-  .nav-links {
-    position: relative;
-    height: 100%;
-    padding-top: 0;
-    flex-direction:row;
+  .menu-items {
+    display: flex;
+    flex-direction: row;
     pointer-events: all;
-    opacity: 1;
   }
+  .nav-links {
+    display: flex;
+  }
+  
   .nav-links li {
     display: flex;
     justify-content: center;
+    margin: 0 16px;
   }
  
   .nav-links li img {
