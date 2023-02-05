@@ -1,6 +1,11 @@
+//Nav custom element
 class NavigationBar extends HTMLElement {
   connectedCallback() {
-      this.innerHTML = `
+    const path = window.location.pathname;
+    const page = path.split("/").pop();
+    var changePage = '';
+    if (page === 'legal.html') {changePage = 'index.html'};
+    this.innerHTML = `
 <nav>
       <div class="nav-container">
           <div class="logo">
@@ -17,23 +22,23 @@ class NavigationBar extends HTMLElement {
               <ul class="nav-links">
                   <li>
                       <img class="casa-section" src="src/brush-orange.png" alt="Brush stroke orange">
-                      <a href="#casaFriedel">Casa Friedel</a>
+                      <a href="${changePage}#casaFriedel">Casa Friedel</a>
                   </li>
                   <li>
                       <img class="preis-section" src="src/brush-green.png" alt="Brush stroke green">
-                      <a href="#preise" class="de">Preise</a>
-                      <a href="#preise" class="en">Prices</a>
-                      <a href="#preise" class="es">Precios</a>
+                      <a href="${changePage}#preise" class="de">Preise</a>
+                      <a href="${changePage}#preise" class="en">Prices</a>
+                      <a href="${changePage}#preise" class="es">Precios</a>
                   </li>
                   <li>
                       <img class="veno-section" src="src/brush-red.png" alt="Brush stroke red">
-                      <a href="#veno">Veno</a>
+                      <a href="${changePage}#veno">Veno</a>
                   </li>
                   <li>
                       <img class="contact-section" src="src/brush-blue.png" alt="Brush stroke blue">
-                      <a href="#contact" class="de">Kontakt</a>
-                      <a href="#contact" class="en">Contact</a>
-                      <a href="#contact" class="es">Contacto</a>
+                      <a href="${changePage}#contact" class="de">Kontakt</a>
+                      <a href="${changePage}#contact" class="en">Contact</a>
+                      <a href="${changePage}#contact" class="es">Contacto</a>
                   </li>
               </ul>
           
@@ -82,10 +87,8 @@ const langVariants = document.querySelectorAll(".de, .es, .en")
 function setLang(lang) {
   langVariants.forEach(langVariant => {
     if(langVariant.classList.contains(lang)) {
-      console.log('if');
       langVariant.classList.remove('inactiveLang');
     } else {
-      console.log('else');
       langVariant.classList.add('inactiveLang');
     }
   });
