@@ -1,4 +1,4 @@
-//Nav custom element
+//Custom element: navigation
 class NavigationBar extends HTMLElement {
   connectedCallback() {
     const path = window.location.pathname;
@@ -76,8 +76,35 @@ class NavigationBar extends HTMLElement {
       `;
   }
 }
-
 customElements.define('navigation-bar', NavigationBar);
+
+//Custom element: navigation
+class footerElement extends HTMLElement {
+  connectedCallback() {
+    const path = window.location.pathname;
+    const page = path.split("/").pop();
+    var changePage = '';
+    if (page === 'legal.html') {changePage = 'index.html'};
+    this.innerHTML = `
+    <footer>
+        <img src="src/footer.jpg" alt="Footer image of mountains">
+        <ul class="footer-links">
+            <li>
+                <a href="legal.html#impressum" class="de">Impressum</a>
+                <a href="legal.html#impressum" class="en">Imprint</a>
+                <a href="legal.html#impressum" class="es">Aviso Legal</a>
+            </li>
+            <li>
+                <a href="legal.html#datenschutz" class="de">Datenschutz</a>
+                <a href="legal.html#datenschutz" class="en">Privacy Policy</a>
+                <a href="legal.html#datenschutz" class="es">Declaratión de privacidad</a>
+            </li>
+        </ul>
+    </footer> 
+      `;
+  }
+}
+customElements.define('footer-element', footerElement);
 
 
 //Display content in the selected language
