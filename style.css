@@ -25,6 +25,9 @@ body {
 section {
   margin-bottom: 160px;
 }
+section:has(.expand) {
+  margin-bottom: 160px;
+}
 
 /*Navbar styling*/
 nav {
@@ -156,7 +159,7 @@ h3 {
 /*Casa Friedel*/
 .casaFriedel {
   height: 85px;
-  margin: 0 0 40px 0;
+  margin: 0 0 56px 0;
 }
 .casaFriedel .drawing {
   position: absolute;
@@ -232,7 +235,7 @@ h3 {
   align-items: center;
 }
 .img-text-section > div {
-  margin-bottom: 16px;
+  margin-bottom: 40px;
 }
 .img-text-section img {
   width: 100%;
@@ -259,7 +262,7 @@ h3 {
   width: 100%;
 }
 .collapsible {
-  margin-bottom: 40px;
+  margin-bottom: 80px;
 }
 .content {
   max-height: 100px;
@@ -478,6 +481,13 @@ footer a:hover {
   section {
     margin-bottom: 200px;
   }
+  section:has(.expand) {
+    margin-bottom: 250px;
+  }
+
+
+
+  section 
   .nav-base-shadow {
     box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
   }

@@ -3,8 +3,6 @@ class NavigationBar extends HTMLElement {
   connectedCallback() {
     const path = window.location.pathname;
     const page = path.split("/").pop();
-    var changePage = '';
-    if (page === 'legal.html') {changePage = 'index.html'};
     this.innerHTML = `
 <nav>
       <div class="nav-container">
@@ -22,23 +20,23 @@ class NavigationBar extends HTMLElement {
               <ul class="nav-links">
                   <li>
                       <img class="casa-section" src="src/brush-orange.png" alt="Brush stroke orange">
-                      <a href="${changePage}#casaFriedel">Casa Friedel</a>
+                      <a href="${page === 'legal.html' ? 'index.html' : ''}#casaFriedel">Casa Friedel</a>
                   </li>
                   <li>
                       <img class="preis-section" src="src/brush-green.png" alt="Brush stroke green">
-                      <a href="${changePage}#preise" class="de">Preise</a>
-                      <a href="${changePage}#preise" class="en">Prices</a>
-                      <a href="${changePage}#preise" class="es">Precios</a>
+                      <a href="${page === 'legal.html' ? 'index.html' : ''}#preise" class="de">Preise</a>
+                      <a href="${page === 'legal.html' ? 'index.html' : ''}#preise" class="en">Prices</a>
+                      <a href="${page === 'legal.html' ? 'index.html' : ''}#preise" class="es">Precios</a>
                   </li>
                   <li>
                       <img class="veno-section" src="src/brush-red.png" alt="Brush stroke red">
-                      <a href="${changePage}#veno">Veno</a>
+                      <a href="${page === 'legal.html' ? 'index.html' : ''}#veno">Veno</a>
                   </li>
                   <li>
                       <img class="contact-section" src="src/brush-blue.png" alt="Brush stroke blue">
-                      <a href="${changePage}#contact" class="de">Kontakt</a>
-                      <a href="${changePage}#contact" class="en">Contact</a>
-                      <a href="${changePage}#contact" class="es">Contacto</a>
+                      <a href="${page === 'legal.html' ? 'index.html' : ''}#contact" class="de">Kontakt</a>
+                      <a href="${page === 'legal.html' ? 'index.html' : ''}#contact" class="en">Contact</a>
+                      <a href="${page === 'legal.html' ? 'index.html' : ''}#contact" class="es">Contacto</a>
                   </li>
               </ul>
           
@@ -76,28 +74,26 @@ class NavigationBar extends HTMLElement {
       `;
   }
 }
-customElements.define('navigation-bar', NavigationBar);
+customElements.define('navbar-element', NavigationBar);
 
 //Custom element: navigation
 class footerElement extends HTMLElement {
   connectedCallback() {
     const path = window.location.pathname;
     const page = path.split("/").pop();
-    var changePage = '';
-    if (page === 'legal.html') {changePage = 'index.html'};
     this.innerHTML = `
     <footer>
         <img src="src/footer.jpg" alt="Footer image of mountains">
         <ul class="footer-links">
             <li>
-                <a href="legal.html#impressum" class="de">Impressum</a>
-                <a href="legal.html#impressum" class="en">Imprint</a>
-                <a href="legal.html#impressum" class="es">Aviso Legal</a>
+                <a href="${page === 'index.html' ? 'legal.html' : ''}#impressum" class="de">Impressum</a>
+                <a href="${page === 'index.html' ? 'legal.html' : ''}#impressum" class="en">Imprint</a>
+                <a href="${page === 'index.html' ? 'legal.html' : ''}#impressum" class="es">Aviso Legal</a>
             </li>
             <li>
-                <a href="legal.html#datenschutz" class="de">Datenschutz</a>
-                <a href="legal.html#datenschutz" class="en">Privacy Policy</a>
-                <a href="legal.html#datenschutz" class="es">Declaratión de privacidad</a>
+                <a href="${page === 'index.html' ? 'legal.html' : ''}#datenschutz" class="de">Datenschutz</a>
+                <a href="${page === 'index.html' ? 'legal.html' : ''}#datenschutz" class="en">Privacy Policy</a>
+                <a href="${page === 'index.html' ? 'legal.html' : ''}#datenschutz" class="es">Declaratión de privacidad</a>
             </li>
         </ul>
     </footer> 
