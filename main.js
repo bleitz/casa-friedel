@@ -1,3 +1,4 @@
+
 //Custom element: navigation
 class NavigationBar extends HTMLElement {
   connectedCallback() {
@@ -20,23 +21,27 @@ class NavigationBar extends HTMLElement {
               <ul class="nav-links">
                   <li>
                       <img class="casa-section" src="src/brush-orange.png" alt="Brush stroke orange">
-                      <a href="${page === 'legal.html' ? 'index.html' : ''}#casaFriedel">Casa Friedel</a>
+                      <a href="${page === 'legal.html' ? 'index.html?lang=de' : ''}#casaFriedel" class="de">Casa Friedel</a>
+                      <a href="${page === 'legal.html' ? 'index.html?lang=en' : ''}#casaFriedel" class="en">Casa Friedel</a>
+                      <a href="${page === 'legal.html' ? 'index.html?lang=es' : ''}#casaFriedel" class="es">Casa Friedel</a>
                   </li>
                   <li>
                       <img class="preis-section" src="src/brush-green.png" alt="Brush stroke green">
-                      <a href="${page === 'legal.html' ? 'index.html' : ''}#preise" class="de">Preise</a>
-                      <a href="${page === 'legal.html' ? 'index.html' : ''}#preise" class="en">Prices</a>
-                      <a href="${page === 'legal.html' ? 'index.html' : ''}#preise" class="es">Precios</a>
+                      <a href="${page === 'legal.html' ? 'index.html?lang=de' : ''}#preise" class="de">Preise</a>
+                      <a href="${page === 'legal.html' ? 'index.html?lang=en' : ''}#preise" class="en">Prices</a>
+                      <a href="${page === 'legal.html' ? 'index.html?lang=es' : ''}#preise" class="es">Precios</a>
                   </li>
                   <li>
                       <img class="veno-section" src="src/brush-red.png" alt="Brush stroke red">
-                      <a href="${page === 'legal.html' ? 'index.html' : ''}#veno">Veno</a>
+                      <a href="${page === 'legal.html' ? 'index.html?lang=de' : ''}#veno" class="de">Veno</a>
+                      <a href="${page === 'legal.html' ? 'index.html?lang=es' : ''}#veno" class="en">Veno</a>
+                      <a href="${page === 'legal.html' ? 'index.html?lang=en' : ''}#veno" class="es">Veno</a>
                   </li>
                   <li>
                       <img class="contact-section" src="src/brush-blue.png" alt="Brush stroke blue">
-                      <a href="${page === 'legal.html' ? 'index.html' : ''}#contact" class="de">Kontakt</a>
-                      <a href="${page === 'legal.html' ? 'index.html' : ''}#contact" class="en">Contact</a>
-                      <a href="${page === 'legal.html' ? 'index.html' : ''}#contact" class="es">Contacto</a>
+                      <a href="${page === 'legal.html' ? 'index.html?lang=de' : ''}#contact" class="de">Kontakt</a>
+                      <a href="${page === 'legal.html' ? 'index.html?lang=en' : ''}#contact" class="en">Contact</a>
+                      <a href="${page === 'legal.html' ? 'index.html?lang=es' : ''}#contact" class="es">Contacto</a>
                   </li>
               </ul>
           
@@ -86,14 +91,14 @@ class footerElement extends HTMLElement {
         <img src="src/footer.jpg" alt="Footer image of mountains">
         <ul class="footer-links">
             <li>
-                <a href="${page === 'index.html' ? 'legal.html' : ''}#impressum" class="de">Impressum</a>
-                <a href="${page === 'index.html' ? 'legal.html' : ''}#impressum" class="en">Imprint</a>
-                <a href="${page === 'index.html' ? 'legal.html' : ''}#impressum" class="es">Aviso Legal</a>
+                <a href="${page === 'index.html' ? 'legal.html?lang=de' : ''}#impressum" class="de">Impressum</a>
+                <a href="${page === 'index.html' ? 'legal.html?lang=en' : ''}#impressum" class="en">Imprint</a>
+                <a href="${page === 'index.html' ? 'legal.html?lang=es' : ''}#impressum" class="es">Aviso Legal</a>
             </li>
             <li>
-                <a href="${page === 'index.html' ? 'legal.html' : ''}#datenschutz" class="de">Datenschutz</a>
-                <a href="${page === 'index.html' ? 'legal.html' : ''}#datenschutz" class="en">Privacy Policy</a>
-                <a href="${page === 'index.html' ? 'legal.html' : ''}#datenschutz" class="es">Declaratión de privacidad</a>
+                <a href="${page === 'index.html' ? 'legal.html?lang=de' : ''}#datenschutz" class="de">Datenschutz</a>
+                <a href="${page === 'index.html' ? 'legal.html?lang=en' : ''}#datenschutz" class="en">Privacy Policy</a>
+                <a href="${page === 'index.html' ? 'legal.html?lang=es' : ''}#datenschutz" class="es">Declaratión de privacidad</a>
             </li>
         </ul>
     </footer> 
@@ -105,7 +110,7 @@ customElements.define('footer-element', footerElement);
 
 //Display content in the selected language
 const langOptions = document.querySelectorAll(".select-box__option");
-const langVariants = document.querySelectorAll(".de, .es, .en")
+const langVariants = document.querySelectorAll(".de, .es, .en");
 
 function setLang(lang) {
   langVariants.forEach(langVariant => {
@@ -117,8 +122,12 @@ function setLang(lang) {
   });
 }
 
-setLang('de'); //Default; runs on pageload
+// Sets language on app load
+const urlParams = (new URL(document.URL)).searchParams;
+const initialLang = urlParams.get('lang') ? urlParams.get('lang') : 'de';
+setLang(initialLang); 
 
+// Changes language from dropdown 
 langOptions.forEach(langOption => {
   langOption.addEventListener('click', (e)=>{
     const selectedLang = e.target.getAttribute('for');
