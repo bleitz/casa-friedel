@@ -7,10 +7,6 @@
   letter-spacing: 1px;
 }
 
-.inactiveLang {
-  display: none;
-}
-
 body {
   overflow-x: hidden;
   margin-bottom: 80px;
@@ -57,8 +53,8 @@ nav {
   display: block;
   position: absolute;
   cursor: pointer;
-  right: 5%;
-  transform: translate(0, 24px);
+  right: 24px;
+  top: 24px;
   z-index: 13;
   transition: all 0.7s ease;
 }
@@ -259,12 +255,12 @@ p {
   padding-left: 16px;
 }
 .img-text-section ul li::before {
-  content: "\25A0";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
-  color: #ADC2DA; /* Change the color */
-  font-weight: bolder; /* If you want it to be bold */
-  display: inline-block; /* Needed to add space between the bullet and the text */
-  width: 1.5em; /* Also needed for space (tweak if needed) */
-  margin-left: -1.5em; /* Also needed for space (tweak if needed) */
+  content: "\25A0";  
+  color: #ADC2DA; 
+  font-weight: bolder; 
+  display: inline-block; 
+  width: 1.5em;
+  margin-left: -1.5em;
 }
 .galleria { 
   /* margin-bottom: 40px; */
@@ -352,7 +348,9 @@ table.preis-tabelle thead th, .left-header {
           animation-name: none;
 }
 .select-box__current:focus + .select-box__list .select-box__option {
+
   cursor: pointer;
+  text-align: center;
 }
 .select-box__current:focus .select-box__icon {
   -webkit-transform: translateY(-50%) rotate(180deg);

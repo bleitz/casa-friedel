@@ -21,27 +21,19 @@ class NavigationBar extends HTMLElement {
               <ul class="nav-links">
                   <li>
                       <img class="casa-section" src="src/brush-orange.png" alt="Brush stroke orange">
-                      <a href="${page === 'legal.html' ? 'index.html?lang=de' : ''}#casaFriedel" class="de">Casa Friedel</a>
-                      <a href="${page === 'legal.html' ? 'index.html?lang=en' : ''}#casaFriedel" class="en">Casa Friedel</a>
-                      <a href="${page === 'legal.html' ? 'index.html?lang=es' : ''}#casaFriedel" class="es">Casa Friedel</a>
+                      <a href="${page === 'legal.html' ? 'index.html?lang=de' : ''}#casaFriedel">Casa Friedel</a>
                   </li>
                   <li>
                       <img class="preis-section" src="src/brush-green.png" alt="Brush stroke green">
-                      <a href="${page === 'legal.html' ? 'index.html?lang=de' : ''}#preise" class="de">Preise</a>
-                      <a href="${page === 'legal.html' ? 'index.html?lang=en' : ''}#preise" class="en">Prices</a>
-                      <a href="${page === 'legal.html' ? 'index.html?lang=es' : ''}#preise" class="es">Precios</a>
+                      <a href="${page === 'legal.html' ? 'index.html?lang=de' : ''}#preise" id="menuPrices">Preise</a>
                   </li>
                   <li>
                       <img class="veno-section" src="src/brush-red.png" alt="Brush stroke red">
-                      <a href="${page === 'legal.html' ? 'index.html?lang=de' : ''}#veno" class="de">Veno</a>
-                      <a href="${page === 'legal.html' ? 'index.html?lang=es' : ''}#veno" class="en">Veno</a>
-                      <a href="${page === 'legal.html' ? 'index.html?lang=en' : ''}#veno" class="es">Veno</a>
+                      <a href="${page === 'legal.html' ? 'index.html?lang=de' : ''}#veno">Veno</a>
                   </li>
                   <li>
                       <img class="contact-section" src="src/brush-blue.png" alt="Brush stroke blue">
-                      <a href="${page === 'legal.html' ? 'index.html?lang=de' : ''}#contact" class="de">Kontakt</a>
-                      <a href="${page === 'legal.html' ? 'index.html?lang=en' : ''}#contact" class="en">Contact</a>
-                      <a href="${page === 'legal.html' ? 'index.html?lang=es' : ''}#contact" class="es">Contacto</a>
+                      <a href="${page === 'legal.html' ? 'index.html?lang=de' : ''}#contact" id="menuContact">Kontakt</a>
                   </li>
               </ul>
           
@@ -63,13 +55,13 @@ class NavigationBar extends HTMLElement {
                   </div>
                   <ul class="select-box__list">
                       <li>
-                          <label class="select-box__option" for="en" aria-hidden="aria-hidden">EN (English)</label>
+                          <label class="select-box__option" for="en" aria-hidden="aria-hidden">🇬🇧 English</label>
                       </li>
                       <li>
-                          <label class="select-box__option" for="es" aria-hidden="aria-hidden">ES (Español)</label>
+                          <label class="select-box__option" for="es" aria-hidden="aria-hidden">🇪🇸 Español</label>
                       </li>
                       <li>
-                          <label class="select-box__option" for="de" aria-hidden="aria-hidden">DE (Deutsch)</label>
+                          <label class="select-box__option" for="de" aria-hidden="aria-hidden">🇩🇪 Deutsch</label>
                       </li>
                   </ul>
               </div>
@@ -91,49 +83,47 @@ class footerElement extends HTMLElement {
         <img src="src/footer.jpg" alt="Footer image of mountains">
         <ul class="footer-links">
             <li>
-                <a href="${page === 'index.html' ? 'legal.html?lang=de' : ''}#impressum" class="de">Impressum</a>
-                <a href="${page === 'index.html' ? 'legal.html?lang=en' : ''}#impressum" class="en">Imprint</a>
-                <a href="${page === 'index.html' ? 'legal.html?lang=es' : ''}#impressum" class="es">Aviso Legal</a>
+                <a href="${page === 'index.html' ? 'legal.html?lang=de' : ''}#impressum" id="footerImprint"></a>
             </li>
             <li>
-                <a href="${page === 'index.html' ? 'legal.html?lang=de' : ''}#datenschutz" class="de">Datenschutz</a>
-                <a href="${page === 'index.html' ? 'legal.html?lang=en' : ''}#datenschutz" class="en">Privacy Policy</a>
-                <a href="${page === 'index.html' ? 'legal.html?lang=es' : ''}#datenschutz" class="es">Declaratión de privacidad</a>
+                <a href="${page === 'index.html' ? 'legal.html?lang=de' : ''}#datenschutz" id="footerPrivacy"></a>
             </li>
         </ul>
     </footer> 
-      `;
+  `;
   }
 }
 customElements.define('footer-element', footerElement);
 
+// On page load, set the initial language (English in this case)
+document.addEventListener('DOMContentLoaded', () => {
+  const urlParams = (new URL(document.URL)).searchParams;
+  const initialLang = urlParams.get('lang') ? urlParams.get('lang') : 'de';
+  switchLanguage(initialLang);
+});
 
-//Display content in the selected language
+// Changes language when selecting it
 const langOptions = document.querySelectorAll(".select-box__option");
-const langVariants = document.querySelectorAll(".de, .es, .en");
-
-function setLang(lang) {
-  langVariants.forEach(langVariant => {
-    if(langVariant.classList.contains(lang)) {
-      langVariant.classList.remove('inactiveLang');
-    } else {
-      langVariant.classList.add('inactiveLang');
-    }
-  });
-}
-
-// Sets language on app load
-const urlParams = (new URL(document.URL)).searchParams;
-const initialLang = urlParams.get('lang') ? urlParams.get('lang') : 'de';
-setLang(initialLang); 
-
-// Changes language from dropdown 
 langOptions.forEach(langOption => {
   langOption.addEventListener('click', (e)=>{
     const selectedLang = e.target.getAttribute('for');
-    setLang(selectedLang);
+    switchLanguage(selectedLang);
   });
 });
+
+// Function to switch language and update content
+function switchLanguage(langCode) {
+  if (languageData.hasOwnProperty(langCode)) {
+    const textElements = languageData[langCode]
+    for (const textElementKey in textElements) {
+      const textElementValue = textElements[textElementKey];
+      console.log(textElementKey)
+      document.getElementById(textElementKey).innerHTML = textElementValue;
+    }
+  } else {
+    console.error(`Language ${langCode} not available.`);
+  }
+}
 
 //Mobile menu functionality
 const hamburger = document.querySelector(".hamburger");
@@ -263,3 +253,208 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+
+
+const languageData = {
+  en: {
+    menuPrices: 'Prices',
+    menuContact: 'Contact',
+    contentCasaFriedel1: `
+      <p>The vacation home "Casa Friedel" in Yaiza, Lanzarote invites you to a relaxing vacation in the Canary sun, quietly located on the edge of the village center of Yaiza, detached with beautiful views of the Fire Mountains.</p><p>Casa Friedel" consists of two apartments: the main house and the studio apartment. These can be booked separately or together.</p>
+      <p>The house is rented-out directly by the owner.</p>
+    `,
+    contentCasaFriedel2: `
+      <p>The vacation home "Casa Friedel" in Yaiza, Lanzarote invites you to a relaxing vacation in the Canary sun, quietly located on the edge of the village center of Yaiza, detached with beautiful views of the Fire Mountains.</p>
+      <p>Casa Friedel" consists of two apartments: the main house and the studio apartment. These can be booked separately or together.</p>
+      <p>The house is rented-out directly by the owner.</p>
+    `,
+    headlineMainHouse: 'Main house',
+    contentMainHouse: `
+    <ul>
+      <li>Old, beautifully renovated finca in typical canarian style, ideal for 2-3 persons</li>
+      <li>Large, light-filled courtyard and small patio with views of the Fire Mountains</li>
+      <li>Large, fully equipped kitchen with dishwasher and refrigerator and freezer and adjoining dining room</li>
+      <li>Living room with WLAN & TV, large bedroom with double bed and luxurious bathroom, as well as a separate single room.</li>
+    </ul>
+      `,
+    headlineStudio: 'Studio apartment',
+    contentStudio: `
+    <ul>
+      <li>Small apartment ideal for 1-2 persons, with double bed, sofa, shower bath, WLAN and TV</li>
+      <li>Patio with outdoor shower and view of the Fire Mountains</li>
+      <li>Fully equipped kitchenette with dishwasher and refrigerator and freezer</li>
+    </ul>
+    `,
+    headlinePrices: 'Prices',
+    priceTable: `
+      <thead>
+          <tr>
+              <th></th>
+              <th id="columnHeaderMainHouse">Haupthaus</th>
+              <th id="columnHeaderStudio">Nebenhaus</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td class="left-header">From 1 week<br>(1-2 guests):</td>
+              <td>100€/day</td>
+              <td>50€/day</td>
+          </tr>
+          <tr>
+              <td class="left-header">From 3 weeks<br>(1-2 guests):</td>
+              <td>85€/day</td>
+              <td>40€/day</td>
+          </tr>
+          <tr>
+              <td class="left-header">Additional guest:</td>
+              <td>+ 20€/day</td>
+              <td></td>
+          </tr>
+      </tbody>
+    `,
+    headlineContact: 'Contact & Bookings',
+    contentVeno: `
+      <p>Friedel and Wilf Leitz were the owners of Casa Friedel and ran it together for a long time. The house was named after Friedel Leitz, who continued to run it alone after Wilf's death. When Friedel went into her well-deserved retirement, her children took over the care of the house. So now it is mainly looked after by Karin Lübbers.<p>
+      <p>Below you can see some impressions of Lanzarote, captured by the photographic eye of Veno. "Veno" is the artist name of Wilf Leitz.<p/>
+    `,
+    footerImprint: "Imprint",
+    footerPrivacy: "Privacy Policy"
+  },
+  de: {
+    menuPrices: 'Preise',
+    menuContact: 'Kontakt',
+    contentCasaFriedel1: `
+      <p>Das Ferienhaus "Casa Friedel" in Yaiza, Lanzarote lädt ein zu einem entspannten Urlaub in der kanarischen Sonne, ruhig gelegen am Rand des Ortskerns von Yaiza, freistehend mit schönem Blick auf die Feuerberge.</p>
+      <p>Das “Casa Friedel” umfasst zwei Wohnungen: das Haupthaus und das Nebenhaus. Diese können entweder jeweils einzeln, oder aber auch zusammen gebucht werden.</p>
+      <p>Das Haus wird direkt vom Eigentümer vermietet.</p>
+    `,
+    contentCasaFriedel2: `
+      <p>The Casa Friedel is located in Yaiza, the largest village in the south of the island, on the edge of the National Park Timanfaya, far from the bustling tourist centers. Yaiza is the starting point for tours to the Montañas del Fuego and to the other attractions of the island.</p>
+      <p>In Yaiza there are several restaurants, a small supermarket, boutiques, a bank, a post office and a cultural center.</p>
+      <p>The Casa Friedel is located on the western edge of the center of Yaiza, quiet and away from the main road.</p>`,
+    headlineMainHouse: 'Haupthaus',
+    contentMainHouse: `
+      <ul>
+        <li>Alte, schön renovierte Finca im typischen kanarischen Stil, ideal für 2-3 Personen</li>
+        <li>Großer, lichtdurchfluteter Innenhof und kleiner Patio mit Blick auf die Feuerberge</li>
+        <li>Große, vollständig eingerichtete Küche mit Spülmaschine sowie Kühl- und Gefrierschrank und angrenzendem Esszimmer</li>
+        <li>Wohnzimmer mit WLAN & TV, großes Schlafzimmer mit Doppelbett und luxuriösem Bad, sowie ein separates Einzelzimmer</li>'
+      </ul>
+      `,
+    headlineStudio: 'Nebenhaus',
+    contentStudio: `
+      <ul>
+        <li>Kleines Appartement ideal für 1-2 Personen, mit Doppelbett, Sofa, Duschbad, WLAN und TV</li>
+        <li>Patio mit Außendusche und Blick auf die Feuerberge</li>
+        <li>Vollständig eingerichtete Küchenzeile mit Spülmaschine sowie Kühl- und Gefrierschrank</li>'
+      </ul>
+        `,
+    headlinePrices: 'Preise',
+    priceTable: `
+      <thead>
+          <tr>
+              <th></th>
+              <th id="columnHeaderMainHouse">Haupthaus</th>
+              <th id="columnHeaderStudio">Nebenhaus</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td class="left-header">Ab 1 Woche<!-- br -->(1-2 Personen):</td>
+              <td>100€/Tag</td>
+              <td>50€/Tag</td>
+          </tr>
+          <tr>
+              <td class="left-header">Ab 3 Wochen<!-- br -->(1-2 Personen):</td>
+              <td>85€/Tag</td>
+              <td>40€/Tag</td>
+          </tr>
+          <tr>
+              <td class="left-header">Zusätzliche Person:</td>
+              <td>+ 20€/Tag</td>
+              <td></td>
+          </tr>
+      </tbody>
+    `,
+    headlineContact: 'Kontakt & Buchungen',
+    contentVeno: `
+      <p>Friedel und Wilf Leitz waren die die Eigentümer des Casa Friedels und führten es lange Zeit gemeinsam. Das Haus wurde nach Friedel Leitz benannt, welche es nach Wilf's Tod alleine weiterführte. Als Friedel in ihren wohlverdienten Ruhestand ging, übernahmen ihre Kinder die Betreuung des Hauses. So wird es jetzt vor allem von Karin Lübbers betreut.<p>
+      <p>Nachfolgend sehen sie einige Impressionen Lanzarotes, eingefangen durch das fotografische Auge von Veno. "Veno" ist der Künstlername von Wilf Leitz.<p/>
+    `,
+    footerImprint: "Impressum",
+    footerPrivacy: "Datenschutz"
+  },
+  es: {
+    menuPrices: 'Precios',
+    menuContact: 'Contacto',
+    contentCasaFriedel1: `
+      <p>La casa de vacaciones "Casa Friedel" en Yaiza, Lanzarote le invita a unas vacaciones relajantes bajo el sol canario, situada tranquilamente en el borde del centro de Yaiza, independiente con una hermosa vista de las Montañas del Fuego.</p>
+      <p>La "Casa Friedel" consta de dos viviendas: la casa principal y el apartamento. Pueden reservarse por separado o conjuntamente.</p>
+      <p>La casa la alquila directamente el propietario.</p>
+    `,
+    contentCasaFriedel2: `
+      <p>La Casa Friedel se encuentra en Yaiza, el pueblo más grande del sur de la isla, al borde del Parque Nacional de Timanfaya, lejos de los animados centros turísticos. Yaiza es el punto de partida para excursiones a las Montañas del Fuego y a otros lugares de interés de la isla.</p>
+      <p>En Yaiza hay varios restaurantes, un pequeño supermercado, boutiques, un banco, una oficina de correos y un centro cultural.</p>
+      <p>La Casa Friedel está situada en el extremo oeste del centro de Yaiza, tranquila y alejada de la carretera principal.</p><p>
+    `,
+    headlineMainHouse: 'Casa Principal',
+    contentMainHouse: `
+      <ul>
+        <li>Finca antigua, bellamente reformada en estilo típico canario, ideal para 2-3 personas.</li>
+        <li>Gran patio luminoso y pequeño patio con vistas a las Montañas del Fuego</li>
+        <li>Amplia cocina totalmente equipada con lavavajillas y frigorífico-congelador y comedor contiguo</li>
+        <li>Sala de estar con WLAN y TV, amplio dormitorio con cama de matrimonio y lujoso cuarto de baño, así como una habitación individual independiente.</li>
+      </ul>
+    `,
+    headlineStudio: 'Apartamento',
+    contentStudio: `
+      <ul>
+        <li>Pequeño apartamento ideal para 1-2 personas, con cama doble, sofá, cuarto de ducha, WLAN y TV.</li>
+        <li>Patio con ducha exterior y vistas a las Montañas del Fuego</li>
+        <li>Cocina americana totalmente equipada con lavavajillas y frigorífico con congelador</li>
+      </ul>
+    `,
+    headlinePrices: 'Precios',
+    priceTable: `
+      <thead>
+          <tr>
+              <th></th>
+              <th id="columnHeaderMainHouse">Haupthaus</th>
+              <th id="columnHeaderStudio">Nebenhaus</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td class="left-header">A partir de 1 semana<br>(1-2 personas):</td>
+              <td>100€/día</td>
+              <td>50€/día</td>
+          </tr>
+          <tr>
+              <td class="left-header">A partir de 3 semanas<br>(1-2 personas):</td>
+              <td>85€/día</td>
+              <td>40€/día</td>
+          </tr>
+          <tr>
+              <td class="left-header">Persona adicional:</td>
+              <td>+ 20€/día</td>
+              <td></td>
+          </tr>
+      </tbody>
+    `,
+    headlineContact: 'Contacto & Reservas',
+    contentVeno: `
+      <p>Friedel y Wilf Leitz eran los propietarios de Casa Friedel y la dirigieron juntos durante mucho tiempo. La casa recibió el nombre de Friedel Leitz, que siguió dirigiéndola en solitario tras la muerte de Wilf. Cuando Friedel pasó a su merecida jubilación, sus hijos se hicieron cargo del cuidado de la casa. Así que ahora se ocupa principalmente Karin Lübbers.<p>
+      <p>A continuación puedes ver algunas impresiones de Lanzarote, captadas por el ojo fotográfico de Veno. "Veno" es el nombre artístico de Wilf Leitz.<p/>
+    `,
+    footerImprint: "Aviso legal",
+    footerPrivacy: "Declaratión de privacidad"
+  },
+};
+
+
+
+
+
+
+
+
