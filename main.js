@@ -73,6 +73,7 @@ class NavigationBar extends HTMLElement {
 }
 customElements.define('navbar-element', NavigationBar);
 
+/*
 //Custom element: navigation
 class footerElement extends HTMLElement {
   connectedCallback() {
@@ -94,6 +95,7 @@ class footerElement extends HTMLElement {
   }
 }
 customElements.define('footer-element', footerElement);
+*/
 
 // On page load, set the initial language (English in this case)
 document.addEventListener('DOMContentLoaded', () => {
