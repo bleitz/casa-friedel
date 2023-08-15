@@ -100,7 +100,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 //Gallerie
 (function() {
-  Galleria.loadTheme('galleria/dist/themes/classic/galleria.classic.min.js');
+  Galleria.loadTheme('galleria/dist/themes/classic/galleria.classic.min.js'); // 
   if (screen.width < 1024) {
     Galleria.run('.galleria', {
       responsive:true, 
