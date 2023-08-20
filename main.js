@@ -101,9 +101,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 //Gallerie
 (function() {
   const currentPagePath = window.location.pathname; 
-  console.log(currentPagePath);
-  console.log(currentPagePath.split('/').pop());
-  if (currentPagePath.split('/').pop() === 'casa-friedel') { // If the current page is in the root dir
+  const parentDir = currentPagePath.split('/').length - 2
+  console.log(currentPagePath.split('/')[parentDir]);
+  if (currentPagePath.split('/')[parentDir] === 'casa-friedel') { // If the current page is in the root dir
     Galleria.loadTheme('galleria/dist/themes/classic/galleria.classic.min.js'); // Use this path
   } else { // If the current page is in a sub dir
     Galleria.loadTheme('../galleria/dist/themes/classic/galleria.classic.min.js'); // User this path
