@@ -8,8 +8,12 @@ langOptions.forEach(langOption => {
     const currentPagePath = window.location.pathname; // Get the current page path
     const currentPageName = currentPagePath.split('/').pop(); // Get the current page name
 
-    window.location.href = `/casa-friedel/${selectedLang}/${currentPageName}`; // Navigate to the target page
-
+    // Navigate to the target page
+    if (selectedLang === 'de') {
+      window.location.href = `/casa-friedel/`;
+    } else {
+      window.location.href = `/casa-friedel/${selectedLang}/${currentPageName}`; 
+    }
   });
 });
 
