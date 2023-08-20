@@ -106,7 +106,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   if (currentPagePath.split('/')[parentDir] === 'casa-friedel') { // If the current page is in the root dir
     Galleria.loadTheme('galleria/dist/themes/classic/galleria.classic.min.js'); // Use this path
   } else { // If the current page is in a sub dir
-    Galleria.loadTheme('../galleria/dist/themes/classic/galleria.classic.min.js'); // User this path
+    Galleria.loadTheme('../galleria/dist/themes/classic/galleria.classic.min.js'); // Use this path
   }
   if (screen.width < 1024) {
     Galleria.run('.galleria', {
