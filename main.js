@@ -100,7 +100,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 //Gallerie
 (function() {
-  Galleria.loadTheme('galleria/dist/themes/classic/galleria.classic.min.js'); // 
+  const currentPagePath = window.location.pathname; 
+  if (currentPagePath.split('/').pop() === 'casa-friedel') { // If the current page is in the root dir
+    Galleria.loadTheme('galleria/dist/themes/classic/galleria.classic.min.js'); // Use this path
+  } else { // If the current page is in a sub dir
+    Galleria.loadTheme('../galleria/dist/themes/classic/galleria.classic.min.js'); // User this path
+  }
   if (screen.width < 1024) {
     Galleria.run('.galleria', {
       responsive:true, 
